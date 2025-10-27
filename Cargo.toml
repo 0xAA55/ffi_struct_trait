@@ -1,0 +1,12 @@
+[package]
+name = "ffi_struct_trait"
+version = "0.1.0"
+edition = "2024"
+authors = ["0xAA55 <838816058@qq.com>"]
+readme = "Readme.md"
+license-file = "LICENSE"
+description = "The trait bounds for `ffi_struct`"
+repository = "https://github.com/0xAA55/ffi_struct_trait"
+keywords = ["FFI", "struct", "API", "padding", "reflection"]
+
+[dependencies]
