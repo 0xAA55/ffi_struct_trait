@@ -1,3 +1,4 @@
+use std::vec::IntoIter;
 
 /// Field information structure
 #[derive(Debug, Clone)]
@@ -15,14 +16,8 @@ pub trait FFIStruct {
 	fn alignment() -> usize;
 
 	/// Get field info (excluding padding)
-	fn field_info() -> Vec<FieldInfo>;
+	fn iter_members() -> IntoIter<FieldInfo>;
 
 	/// Get all field info (including padding)
-	fn all_field_info() -> Vec<FieldInfo>;
-
-	/// Iterate fields (excluding padding)
-	fn iterate_fields(&self, f: impl FnMut(&str, &dyn std::any::Any));
-
-	/// Iterate all fields (including padding)
-	fn iterate_all_fields(&self, f: impl FnMut(&str, &dyn std::any::Any));
+	fn iter_all_members() -> IntoIter<FieldInfo>;
 }
