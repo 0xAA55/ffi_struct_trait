@@ -11,9 +11,6 @@ pub struct MemberInfo {
 
 /// FFIStruct trait
 pub trait FFIStruct: Default {
-	/// The original `Xxx_Rust` type
-	type RustType;
-
 	/// Get field info (excluding padding)
 	fn iter_members(&self) -> IntoIter<(&'static str, MemberInfo)>;
 
